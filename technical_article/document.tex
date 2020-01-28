@@ -1,0 +1,57 @@
+\input{packages}
+\begin{document}
+
+%\pagestyle{empty} %%empty, headings, plain
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Das Dokument                                                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Angaben zur Standardformatierung des Titels %%%%%%%%%%%%%%%%%%%%%%%%
+%\titlehead{}
+\subject{ENI IEML Seminar Paper}
+%Rentabilitätsanalyse von PV-Installationen auf durchschnittlichen Einfamilienhäusern in Österreich
+%\title{Rentability Analysis of PV Installations on Average Single-Family Houses in Austria}
+
+%Analyse von Windkraftwerken
+\title{Wind Power Plants}
+\author{Christoph Muck \and Kai Takac}
+%\subtitle{}
+%\and{Der Name des Co-Autoren}
+%\thanks{Fußnote}			% entspr. \footnote im Fließtext
+%\date{}				% falls anderes, als das aktuelle gewünscht
+
+%% Widmungsseite %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\dedication{Widmung}
+
+%% Titelei
+\maketitle
+
+%% Zusammenfassung nach Titel, vor Inhaltsverzeichnis %%%%%%%%%%%%%%%%%
+%\begin{abstract}
+% Für eine kurze Zusammenfassung des folgenden Artikels.
+% Für die Überschrift s. \documentclass[abstracton].
+%Dies ist eine Zusammenfassung
+%\end{abstract}
+
+%% Erzeugung von Verzeichnissen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents			% Inhaltsverzeichnis
+%\listoftables				% Tabellenverzeichnis
+%\listoffigures				% Abbildungsverzeichnis
+
+%% Der Text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{chapters/01_operating_principle}
+
+%% Literaturverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{\bibname}
+%\emergencystretch=1em
+%\bibliographystyle{bababbrv} 
+%options: babplain, babunsrt, bababbrv, babalpha 
+%         babplain-fl etc: first/lastname 
+%         babplain-lf etc: last/firstname
+\printbibliography[heading=bibintoc]
+
+\end{document}
+

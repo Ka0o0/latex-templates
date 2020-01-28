@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optionen zum Layout des Artikels                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[
+%a5paper,			% alle weiteren Papierformat einstellbar
+%landscape,			% Querformat
+%10pt,				% Schriftgröße (12pt, 11pt (Standard))
+%BCOR=1cm,			% Bindekorrektur, bspw. 1 cm
+%DIVcalc,			% führt die Satzspiegelberechnung neu aus s. scrguide 2.4
+%twoside,			% Doppelseiten
+%twocolumn,			% zweispaltiger Satz
+%halfparskip*,		% Absatzformatierung s. scrguide 3.1
+%headsepline,		% Trennline zum Seitenkopf	
+%footsepline,		% Trennline zum Seitenfuß
+%titlepage,			% Titelei auf eigener Seite
+%normalheadings,	% Überschriften etwas kleiner (smallheadings)
+%idxtotoc,			% Index im Inhaltsverzeichnis
+%liststotoc,		% Abb.- und Tab.verzeichnis im Inhalt
+%abstracton,		% Überschrift über der Zusammenfassung an	
+%leqno,   			% Nummerierung von Gleichungen links
+%fleqn,				% Ausgabe von Gleichungen linksbündig
+%draft,				% überlangen Zeilen in Ausgabe gekennzeichnet
+english				% Sprache
+]
+{scrreprt}
+
+%% Deutsche Anpassungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
+
+%%Referencing%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{varioref}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{textcomp}
+
+%% Packages für Grafiken & Abbildungen %%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx} %%Zum Laden von Grafiken
+%\usepackage{subfig} %%Teilabbildungen in einer Abbildung
+%\usepackage{pst-all} %%PSTricks - nicht verwendbar mit pdfLaTeX
+
+%% Bibliographie %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[babel]{csquotes}
+\usepackage[backend=biber,style=numeric-comp]{biblatex} %authortitle-comp, numeric-comp, numeric
+\bibliography{literature/literatur} %You need a file 'literatur.bib' for this.
+% usage: \cite{test:label}
+
+%This makes square brackets in \parencite instead of round ones.
+\newrobustcmd*{\parentexttrack}[1]{%
+	\begingroup
+	\blx@blxinit
+	\blx@setsfcodes
+	\blx@bibopenparen#1\blx@bibcloseparen
+	\endgroup}
+
+\AtEveryCite{%
+	\let\parentext=\parentexttrack%
+	\let\bibopenparen=\bibopenbracket%
+	\let\bibcloseparen=\bibclosebracket}
+
+%% Source Code Highliting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{xcolor}
+%\definecolor{bg}{rgb}{0.97,0.97,0.97}
+%\usepackage{minted}
+%\newminted{java}{bgcolor=bg,linenos}
+
+% usage:
+%\inputminted[firstline=24,lastline=28]{java}{path/to/file.java}
+
+%\begin{minted}{java}
+%public static void main(String[] args) {
+%System.out.println("Test");
+%}
+%\end{minted}
+
